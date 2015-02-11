@@ -66,7 +66,7 @@
                 <div class="panel-heading"><h3 class="panel-title">Thank Right Now</h3></div>
                     <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
   						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - contact@test.com <span class="label label-success">Best</span> <span class="caret"></span></button>
-  						<ul class="dropdown-menu" role="menu">
+  						<ul class="dropdown-menu" role="menu" style="width: 100%">
     						<li><a href="#">Annual Fund Q1</a></li>
     						<li><a href="#">Annual Fund Q1 <span class="label label-warning">Alternate</span></a></li>
     						<li><a href="#">Season Information</a></li>
@@ -75,7 +75,7 @@
   					</div>
   					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
   						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - Seattle, WA <span class="caret"></span></button>
-  						<ul class="dropdown-menu" role="menu">
+  						<ul class="dropdown-menu" role="menu" style="width: 100%">
     						<li><a href="#">Annual Fund Q1</a></li>
     						<li><a href="#">Annual Fund Q1 <span class="label label-warning">Alternate</span></a></li>
     						<li><a href="#">Season Brochure</a></li>
@@ -97,7 +97,7 @@
 					</div>
 					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
   						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - contact@test.com <span class="caret"></span></button>
-  						<ul class="dropdown-menu" role="menu">
+  						<ul class="dropdown-menu" role="menu" style="width: 100%">
     						<li><a href="#">Annual Fund Thank You Q1</a></li>
     						<li><a href="#">Annual Fund Thank You Q1 <span class="label label-warning">Alternate</span></a></li>
     						<li><a href="#">Capital Campaign Thank You</a></li>
@@ -106,7 +106,7 @@
   					</div>
   					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
   						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - Seattle, WA <span class="caret"></span></button>
-  						<ul class="dropdown-menu" role="menu">
+  						<ul class="dropdown-menu" role="menu" style="width: 100%">
     						<li><a href="#">Annual Fund Q1</a></li>
     						<li><a href="#">Annual Fund Q1 <span class="label label-warning">Alternate</span></a></li>
     						<li><a href="#">Season Brochure</a></li>
