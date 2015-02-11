@@ -1,6 +1,124 @@
-<apex:page >
-  <!-- Begin Default Content REMOVE THIS -->
-  <h1>Congratulations</h1>
-  This is your new Page
-  <!-- End Default Content REMOVE THIS -->
+<apex:page showHeader="true" sidebar="false">
+
+    <apex:includeScript value="/resource/npsp__CumulusStaticResources/jquery/jquery-1.10.2.min.js"/>
+    <apex:includeScript value="/resource/npsp__CumulusStaticResources/Bootstrap/js/bootstrap.min.js" />
+    <apex:styleSheet value="/resource/npsp__CumulusStaticResources/Bootstrap/css/bootstrap-namespaced.css" />
+
+<style>
+    body{
+        margin:0px;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .bootstrap3 h1, .bootstrap3 h2, .bootstrap3 h3, .bootstrap3 h4{
+        font-family: Vagrolight,Arial,Helvetica,sans-serif;
+    }
+    .bootstrap3 p{
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .bootstrap .jumbotron{
+        background-color: #f0f1f2;
+        margin-bottom:0px;
+    }
+
+    .bootstrap .container .jumbotron {
+        padding: 20px;
+    }
+    
+    .bootstrap .container {
+        padding-top: 10px;
+    }
+
+    /* Customize container */
+    @media (min-width: 768px) {
+      .container {
+        max-width: 900px;
+      }
+    }  
+    
+    .bootstrap .panel .list-group .list-group-item {
+        border-width: 0;
+        padding: 5px 0px 5px 0px;        
+    }  
+</style>
+
+
+<div class="bootstrap" >
+
+    <div class="container">
+        <ol class="breadcrumb">
+  			<li><a href="#">Taylor Swift</a></li>
+  			<li><a href="#">Donation - 2/1/15</a></li>
+  			<li class="active">Love</li>
+		</ol>
+        <div class="jumbotron">
+            <div class="container">
+            	<h1 style="margin-top: 10px">DonorLove</h1>
+            	<p>We thank each donor personally. It's time to acknowledge <b>Taylor Swift</b> for her gift of <b>$100.00</b> on <b>2/1/15.</b></p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                <div class="panel-heading"><h3 class="panel-title">Thank Right Now</h3></div>
+                    <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
+  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - contact@test.com <span class="label label-success">Best</span> <span class="caret"></span></button>
+  						<ul class="dropdown-menu" role="menu">
+    						<li><a href="#">Annual Fund Q1</a></li>
+    						<li><a href="#">Annual Fund Q1 <span class="label label-warning">Alternate</span></a></li>
+    						<li><a href="#">Season Information</a></li>
+    						<li><a href="#">Intern Program</a></li>
+  						</ul>
+  					</div>
+  					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
+  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - Seattle, WA <span class="caret"></span></button>
+  						<ul class="dropdown-menu" role="menu">
+    						<li><a href="#">Annual Fund Q1</a></li>
+    						<li><a href="#">Annual Fund Q1 <span class="label label-warning">Alternate</span></a></li>
+    						<li><a href="#">Season Brochure</a></li>
+    						<li><a href="#">Intern Program</a></li>
+  						</ul>
+  					</div>
+  					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
+  						<button type="button" class="btn btn-default">Call - (206) 555-1212</button>
+  					</div>
+                </div>                
+            </div>
+            
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h3 class="panel-title">Assign to Someone Else</h3></div>
+                    <div class="input-group">
+  						<span class="input-group-addon" id="basic-addon1">@</span>
+  						<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" />
+					</div>
+					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
+  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - contact@test.com <span class="caret"></span></button>
+  						<ul class="dropdown-menu" role="menu">
+    						<li><a href="#">Annual Fund Thank You Q1</a></li>
+    						<li><a href="#">Annual Fund Thank You Q1 <span class="label label-warning">Alternate</span></a></li>
+    						<li><a href="#">Capital Campaign Thank You</a></li>
+    						<li><a href="#">Intern Thank You</a></li>
+  						</ul>
+  					</div>
+  					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
+  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - Seattle, WA <span class="caret"></span></button>
+  						<ul class="dropdown-menu" role="menu">
+    						<li><a href="#">Annual Fund Q1</a></li>
+    						<li><a href="#">Annual Fund Q1 <span class="label label-warning">Alternate</span></a></li>
+    						<li><a href="#">Season Brochure</a></li>
+    						<li><a href="#">Intern Program</a></li>
+  						</ul>
+  					</div>
+  					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
+  						<button type="button" class="btn btn-default">Call - (206) 555-1212</button>
+  					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </apex:page>
