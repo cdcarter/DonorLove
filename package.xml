@@ -31,5 +31,9 @@ Values:
         <members>Donation_Thank_Yous/Annual_Fund_Thank_You</members>
         <name>EmailTemplate</name>
     </types>
+    <types>
+        <members>LOVE_Start</members>
+        <name>ApexPage</name>
+    </types>        
     <version>31.0</version>
 </Package>
