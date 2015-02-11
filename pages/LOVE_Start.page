@@ -46,14 +46,14 @@
 
     <div class="container">
         <ol class="breadcrumb">
-  			<li><a href="#">Taylor Swift</a></li>
-  			<li><a href="#">Donation - 2/1/15</a></li>
+  			<li><a href="#">{!PrimaryContact.Name}</a></li>
+  			<li><a href="#">{!Opportunity.Name}</a></li>
   			<li class="active">Love</li>
 		</ol>
         <div class="jumbotron">
             <div class="container">
             	<h1 style="margin-top: 10px">DonorLove</h1>
-            	<p>We thank each donor personally. It's time to acknowledge the <b>{!Opportunity.Account.Name}</b> for their gift of <b><apex:outputField value="{!Opportunity.Amount}"/></b> on <b><apex:outputField value="{!Opportunity.CloseDate}"/></b>.</p>
+            	<p>We thank each donor personally. It's time to acknowledge <b>{!PrimaryContact.Name}</b> for their gift of <b><apex:outputField value="{!Opportunity.Amount}"/></b> on <b><apex:outputField value="{!Opportunity.CloseDate}"/></b>.</p>
             </div>
         </div>
     </div>
@@ -65,7 +65,7 @@
                 <div class="panel panel-default">
                 <div class="panel-heading"><h3 class="panel-title">Thank Right Now</h3></div>
                     <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - contact@test.com <span class="label label-success">Best</span> <span class="caret"></span></button>
+  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - {!PrimaryContact.npe01__WorkEmail__c} <span class="label label-success">Best</span> <span class="caret"></span></button>
   						<ul class="dropdown-menu" role="menu" style="width: 100%">
     						<li><a href="#">Annual Fund Q1</a></li>
     						<li><a href="#">Annual Fund Q1 <span class="label label-warning">Alternate</span></a></li>
@@ -74,7 +74,7 @@
   						</ul>
   					</div>
   					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - Seattle, WA <span class="caret"></span></button>
+  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState} <span class="caret"></span></button>
   						<ul class="dropdown-menu" role="menu" style="width: 100%">
     						<li><a href="#">Annual Fund Q1</a></li>
     						<li><a href="#">Annual Fund Q1 <span class="label label-warning">Alternate</span></a></li>
@@ -83,7 +83,7 @@
   						</ul>
   					</div>
   					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-  						<button type="button" class="btn btn-default">Call - (206) 555-1212</button>
+  						<button type="button" class="btn btn-default">Call - {!PrimaryContact.HomePhone}</button>
   					</div>
                 </div>                
             </div>
@@ -96,7 +96,7 @@
   						<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" />
 					</div>
 					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - contact@test.com <span class="caret"></span></button>
+  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >mail - {!PrimaryContact.npe01__WorkEmail__c} <span class="caret"></span></button>
   						<ul class="dropdown-menu" role="menu" style="width: 100%">
     						<li><a href="#">Annual Fund Thank You Q1</a></li>
     						<li><a href="#">Annual Fund Thank You Q1 <span class="label label-warning">Alternate</span></a></li>
@@ -105,7 +105,7 @@
   						</ul>
   					</div>
   					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - Seattle, WA <span class="caret"></span></button>
+  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState} <span class="caret"></span></button>
   						<ul class="dropdown-menu" role="menu" style="width: 100%">
     						<li><a href="#">Annual Fund Q1</a></li>
     						<li><a href="#">Annual Fund Q1 <span class="label label-warning">Alternate</span></a></li>
@@ -114,7 +114,7 @@
   						</ul>
   					</div>
   					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-  						<button type="button" class="btn btn-default">Call - (206) 555-1212</button>
+  						<button type="button" class="btn btn-default">Call - {!PrimaryContact.HomePhone}</button>
   					</div>
                 </div>
             </div>
