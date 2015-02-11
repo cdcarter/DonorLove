@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Acknowledgement_Email_Template__c</fullName>
+        <description>Text: the name of the primary email template used for acknowledging donations related to this campaign.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the primary email template used for acknowledging donations related to this campaign.</inlineHelpText>
+        <label>Acknowledgement Email Template</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Acknowledgement_Template_Id__c</fullName>
+        <description>Id: text field set by trigger to the GUID of the email template specified in Acknowledgement_Email_Template. This field should only be edited by SFDC and not an end user.</description>
+        <externalId>false</externalId>
+        <label>Acknowledgement_Template_Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

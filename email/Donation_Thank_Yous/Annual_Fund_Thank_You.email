@@ -1,0 +1,9 @@
+Hello {!Contact.FirstName},
+
+Here at {!Organization.Name}, we are so thankful for your recent gift of {!Opportunity.Amount} on {!Opportunity.CloseDate}. Your support helps us accomplish our mission in innumerable ways. Your donation will be credited toward our annual operating fund.
+
+Best,
+
+{!User.Name}
+{!User.Title}
+{!User.Email} / {!User.Profile}

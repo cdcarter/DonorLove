@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Donor Love</fullName>
+    <description>
+Donor Love -- Donation Acknowledgement made personal. 
+
+Values:
+* sits on top of NPSP 3.0 or PatronManager with minimal customization 
+* donation acknowledgement and thanks should be easily personalized
+* the right staff should thank the right donors
+    </description>
+    <types>
+        <members>Campaign.Acknowledgement_Email_Template__c</members>
+        <members>Campaign.Acknowledgement_Template_Id__c</members>
+        <members>Opportunity.Acknowledged__c</members>
+        <members>Opportunity.Acknowledgement_Date__c</members>
+        <members>Opportunity.Acknowledgement_Method__c</members>
+        <members>Opportunity.Acknowledgement_Notes__c</members>
+        <members>Opportunity.Acknowledgement_Received__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Opportunity.Primary_Acknowledgement</members>
+        <name>FieldSet</name>
+    </types>
+    <types>
+        <members>Opportunity-Acknowledgeable Donation Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Donation_Thank_Yous/Annual_Fund_Thank_You</members>
+        <name>EmailTemplate</name>
+    </types>
+    <version>31.0</version>
+</Package>

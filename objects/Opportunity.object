@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <fullName>Primary_Acknowledgement</fullName>
+        <description>All information relating to the primary acknowledgement of a donation.</description>
+        <displayedFields>
+            <field>Acknowledgement_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Acknowledged__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Acknowledgement_Method__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Acknowledgement_Received__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Acknowledgement_Notes__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Primary Acknowledgement</label>
+    </fieldSets>
+    <fields>
+        <fullName>Acknowledged__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox: the donor has been acknowledged and thanked for their donation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The donor has been acknowledged and thanked for their donation.</inlineHelpText>
+        <label>Acknowledged</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Acknowledgement_Date__c</fullName>
+        <description>Date: the date the donor was acknowledged and thanked for this donation.</description>
+        <externalId>false</externalId>
+        <label>Acknowledgement Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Acknowledgement_Method__c</fullName>
+        <description>Picklist: the methods by which the donor received thanks and acknowledgement for this donation.</description>
+        <externalId>false</externalId>
+        <label>Acknowledgement Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Acknowledgement_Notes__c</fullName>
+        <description>Text: any notes about the acknowledgement that the donor ought to receive.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Notes about acknowledgement. Include tax info? Mention a specific program?</inlineHelpText>
+        <label>Acknowledgement Notes</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Acknowledgement_Received__c</fullName>
+        <description>Text: the name of the acknowledgement message received.</description>
+        <externalId>false</externalId>
+        <label>Acknowledgement Received</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>
