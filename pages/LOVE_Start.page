@@ -96,7 +96,7 @@
   						<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" />
 					</div>
 					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >mail - {!PrimaryContact.npe01__WorkEmail__c} <span class="caret"></span></button>
+  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - {!PrimaryContact.npe01__WorkEmail__c} <span class="caret"></span></button>
   						<ul class="dropdown-menu" role="menu" style="width: 100%">
     						<li><a href="#">Annual Fund Thank You Q1</a></li>
     						<li><a href="#">Annual Fund Thank You Q1 <span class="label label-warning">Alternate</span></a></li>
