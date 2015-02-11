@@ -28,6 +28,10 @@ Values:
         <name>Layout</name>
     </types>
     <types>
+        <members>DonorLoveExtension</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
         <members>Donation_Thank_Yous</members>
         <members>Donation_Thank_Yous/Annual_Fund_Thank_You</members>
         <name>EmailTemplate</name>
