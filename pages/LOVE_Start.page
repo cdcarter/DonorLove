@@ -76,7 +76,7 @@
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState}</button>
             </div>
             <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-              <button type="button" class="btn btn-default">Call - {!PrimaryContact.HomePhone}</button>
+              <a type="button" class="btn btn-default" href="{!URLFOR($Action.Activity.LogCall, null, [who_id=PrimaryContact.Id, what_id=Opportunity.Id, tsk5='Thank you call'], true)}">Call - {!PrimaryContact.HomePhone}</a>
             </div>
                 </div>                
             </div>
@@ -100,7 +100,7 @@
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState}</button>
             </div>
             <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-              <button type="button" class="btn btn-default">Call - {!PrimaryContact.HomePhone}</button>
+              <a type="button" class="btn btn-default" href="{!URLFOR($Action.Activity.LogCall, null, [who_id=PrimaryContact.Id, what_id=Opportunity.Id, tsk5='Thank you call'], true)}">Call - {!PrimaryContact.HomePhone}</a>
             </div>
                 </div>
             </div>
