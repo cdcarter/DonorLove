@@ -46,14 +46,14 @@
 
     <div class="container">
         <ol class="breadcrumb">
-  			<li><a href="#">{!PrimaryContact.Name}</a></li>
-  			<li><a href="#">{!Opportunity.Name}</a></li>
-  			<li class="active">Love</li>
-		</ol>
+        <li><a href="#">{!PrimaryContact.Name}</a></li>
+        <li><a href="#">{!Opportunity.Name}</a></li>
+        <li class="active">Love</li>
+    </ol>
         <div class="jumbotron">
             <div class="container">
-            	<h1 style="margin-top: 10px">DonorLove</h1>
-            	<p>We thank each donor personally. It's time to acknowledge <b>{!PrimaryContact.Name}</b> for their gift of <b><apex:outputField value="{!Opportunity.Amount}"/></b> on <b><apex:outputField value="{!Opportunity.CloseDate}"/></b>.</p>
+              <h1 style="margin-top: 10px">DonorLove</h1>
+              <p>We thank each donor personally. It's time to acknowledge <b>{!PrimaryContact.Name}</b> for their gift of <b><apex:outputField value="{!Opportunity.Amount}"/></b> on <b><apex:outputField value="{!Opportunity.CloseDate}"/></b>.</p>
             </div>
         </div>
     </div>
@@ -65,26 +65,25 @@
                 <div class="panel panel-default">
                 <div class="panel-heading"><h3 class="panel-title">Thank Right Now</h3></div>
                     <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - {!PrimaryContact.npe01__WorkEmail__c} <span class="label label-success">Best</span> <span class="caret"></span></button>
-  						<ul class="dropdown-menu" role="menu" style="width: 100%">
-    						<li><a href="#">Annual Fund Q1</a></li>
-    						<li><a href="#">Annual Fund Q1 <span class="label label-warning">Alternate</span></a></li>
-    						<li><a href="#">Season Information</a></li>
-    						<li><a href="#">Intern Program</a></li>
-  						</ul>
-  					</div>
-  					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState} <span class="caret"></span></button>
-  						<ul class="dropdown-menu" role="menu" style="width: 100%">
-    						<li><a href="#">Annual Fund Q1</a></li>
-    						<li><a href="#">Annual Fund Q1 <span class="label label-warning">Alternate</span></a></li>
-    						<li><a href="#">Season Brochure</a></li>
-    						<li><a href="#">Intern Program</a></li>
-  						</ul>
-  					</div>
-  					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-  						<button type="button" class="btn btn-default">Call - {!PrimaryContact.HomePhone}</button>
-  					</div>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - {!PrimaryContact.npe01__WorkEmail__c} <span class="label label-success">Best</span> <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" style="width: 100%">
+                <apex:repeat value="{!EmailTemplates}" var="template">
+                  <li><a href="/apex/LOVE_email?id={!Opportunity.Id}&email={!template.Id}">{!template.Name}</a></li>
+                </apex:repeat>
+              </ul>
+            </div>
+            <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState} <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" style="width: 100%">
+                <li><a href="#">Annual Fund Q1</a></li>
+                <li><a href="#">Annual Fund Q1 <span class="label label-warning">Alternate</span></a></li>
+                <li><a href="#">Season Brochure</a></li>
+                <li><a href="#">Intern Program</a></li>
+              </ul>
+            </div>
+            <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
+              <button type="button" class="btn btn-default">Call - {!PrimaryContact.HomePhone}</button>
+            </div>
                 </div>                
             </div>
             
@@ -92,30 +91,29 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"><h3 class="panel-title">Assign to Someone Else</h3></div>
                     <div class="input-group">
-  						<span class="input-group-addon" id="basic-addon1">@</span>
-  						<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" />
-					</div>
-					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - {!PrimaryContact.npe01__WorkEmail__c} <span class="caret"></span></button>
-  						<ul class="dropdown-menu" role="menu" style="width: 100%">
-    						<li><a href="#">Annual Fund Thank You Q1</a></li>
-    						<li><a href="#">Annual Fund Thank You Q1 <span class="label label-warning">Alternate</span></a></li>
-    						<li><a href="#">Capital Campaign Thank You</a></li>
-    						<li><a href="#">Intern Thank You</a></li>
-  						</ul>
-  					</div>
-  					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState} <span class="caret"></span></button>
-  						<ul class="dropdown-menu" role="menu" style="width: 100%">
-    						<li><a href="#">Annual Fund Q1</a></li>
-    						<li><a href="#">Annual Fund Q1 <span class="label label-warning">Alternate</span></a></li>
-    						<li><a href="#">Season Brochure</a></li>
-    						<li><a href="#">Intern Program</a></li>
-  						</ul>
-  					</div>
-  					<div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-  						<button type="button" class="btn btn-default">Call - {!PrimaryContact.HomePhone}</button>
-  					</div>
+              <span class="input-group-addon" id="basic-addon1">@</span>
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" />
+          </div>
+          <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - {!PrimaryContact.npe01__WorkEmail__c} <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" style="width: 100%">
+                <apex:repeat value="{!EmailTemplates}" var="template">
+                  <li><a href="/apex/LOVE_email?id={!Opportunity.Id}&email={!template.Id}">{!template.Name}</a></li>
+                </apex:repeat>
+              </ul>
+            </div>
+            <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState} <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu" style="width: 100%">
+                <li><a href="#">Annual Fund Q1</a></li>
+                <li><a href="#">Annual Fund Q1 <span class="label label-warning">Alternate</span></a></li>
+                <li><a href="#">Season Brochure</a></li>
+                <li><a href="#">Intern Program</a></li>
+              </ul>
+            </div>
+            <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
+              <button type="button" class="btn btn-default">Call - {!PrimaryContact.HomePhone}</button>
+            </div>
                 </div>
             </div>
         </div>
