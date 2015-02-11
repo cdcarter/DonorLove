@@ -39,6 +39,10 @@ Values:
     <types>
         <members>LOVE_Start</members>
         <name>ApexPage</name>
-    </types>        
+    </types>      
+    <types>
+        <members>Opportunity.Love</members>
+        <name>WebLink</name>
+    </types>  
     <version>31.0</version>
 </Package>

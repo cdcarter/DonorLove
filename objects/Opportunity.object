@@ -99,4 +99,16 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <webLinks>
+        <fullName>Love</fullName>
+        <availability>online</availability>
+        <description>Start the donation acknowledgement process.</description>
+        <displayType>link</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Love</masterLabel>
+        <openType>noSidebar</openType>
+        <page>LOVE_Start</page>
+        <protected>false</protected>
+    </webLinks>
 </CustomObject>
