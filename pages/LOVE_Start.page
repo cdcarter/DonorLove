@@ -1,4 +1,4 @@
-<apex:page showHeader="true" sidebar="false">
+<apex:page showHeader="true" sidebar="false" standardController="Opportunity" extensions="DonorLoveExtension">
 
     <apex:includeScript value="/resource/npsp__CumulusStaticResources/jquery/jquery-1.10.2.min.js"/>
     <apex:includeScript value="/resource/npsp__CumulusStaticResources/Bootstrap/js/bootstrap.min.js" />
@@ -53,7 +53,7 @@
         <div class="jumbotron">
             <div class="container">
             	<h1 style="margin-top: 10px">DonorLove</h1>
-            	<p>We thank each donor personally. It's time to acknowledge <b>Taylor Swift</b> for her gift of <b>$100.00</b> on <b>2/1/15.</b></p>
+            	<p>We thank each donor personally. It's time to acknowledge the <b>{!Opportunity.Account.Name}</b> for their gift of <b><apex:outputField value="{!Opportunity.Amount}"/></b> on <b><apex:outputField value="{!Opportunity.CloseDate}"/></b>.</p>
             </div>
         </div>
     </div>
