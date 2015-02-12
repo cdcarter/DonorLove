@@ -73,7 +73,7 @@
               </ul>
             </div>
             <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState}</button>
+              <a type="button" class="btn btn-default" href="/mail/mmchoose.jsp?id={!Opportunity.Id}&retUrl={!Opportunity.Id}">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState}</a>
             </div>
             <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
               <a type="button" class="btn btn-default" href="{!URLFOR($Action.Activity.LogCall, null, [who_id=PrimaryContact.Id, what_id=Opportunity.Id, tsk5='Thank you call'], true)}">Call - {!PrimaryContact.HomePhone}</a>
@@ -97,10 +97,10 @@
               </ul>
             </div>
             <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState}</button>
+              <a type="button" class="btn btn-default" href="{!URLFOR($Action.Task.NewTask, null, [who_id=PrimaryContact.Id, what_id=Opportunity.Id, tsk5='Send a thank you letter'], true)}">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState}</a>
             </div>
             <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-              <a type="button" class="btn btn-default" href="{!URLFOR($Action.Task.NewTask, null, [who_id=PrimaryContact.Id, what_id=Opportunity.Id, tsk5='Thank you call'], true)}">Call - {!PrimaryContact.HomePhone}</a>
+              <a type="button" class="btn btn-default" href="{!URLFOR($Action.Task.NewTask, null, [who_id=PrimaryContact.Id, what_id=Opportunity.Id, tsk5='Make a thank you call'], true)}">Call - {!PrimaryContact.HomePhone}</a>
             </div>
                 </div>
             </div>
