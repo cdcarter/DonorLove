@@ -65,7 +65,7 @@
                 <div class="panel panel-default">
                 <div class="panel-heading"><h3 class="panel-title">Thank Right Now</h3></div>
                     <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - {!PrimaryContact.npe01__WorkEmail__c} <span class="label label-success">Best</span> <span class="caret"></span></button>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - {!PrimaryContactEmail} <span class="label label-success">Best</span> <span class="caret"></span></button>
               <ul class="dropdown-menu" role="menu" style="width: 100%">
                 <apex:repeat value="{!EmailTemplates}" var="template">
                   <li><a href="/apex/LOVE_email?id={!Opportunity.Id}&email={!template.Id}">{!template.Name}</a></li>
@@ -76,7 +76,7 @@
               <a type="button" class="btn btn-default" href="/mail/mmchoose.jsp?id={!Opportunity.Id}&retUrl={!Opportunity.Id}">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState}</a>
             </div>
             <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-              <a type="button" class="btn btn-default" href="{!URLFOR($Action.Activity.LogCall, null, [who_id=PrimaryContact.Id, what_id=Opportunity.Id, tsk5='Thank you call'], true)}">Call - {!PrimaryContact.HomePhone}</a>
+              <a type="button" class="btn btn-default" href="{!URLFOR($Action.Activity.LogCall, null, [who_id=PrimaryContact.Id, what_id=Opportunity.Id, tsk5='Thank you call'], true)}">Call - {!PrimaryContactPhone}</a>
             </div>
                 </div>                
             </div>
@@ -89,7 +89,7 @@
               <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" />
           </div>
           <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - {!PrimaryContact.npe01__WorkEmail__c} <span class="caret"></span></button>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - {!PrimaryContactEmail} <span class="caret"></span></button>
               <ul class="dropdown-menu" role="menu" style="width: 100%">
                 <apex:repeat value="{!EmailTemplates}" var="template">
                   <li><a href="/apex/LOVE_email?id={!Opportunity.Id}&email={!template.Id}">{!template.Name}</a></li>
@@ -100,7 +100,7 @@
               <a type="button" class="btn btn-default" href="{!URLFOR($Action.Task.NewTask, null, [who_id=PrimaryContact.Id, what_id=Opportunity.Id, tsk5='Send a thank you letter'], true)}">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState}</a>
             </div>
             <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-              <a type="button" class="btn btn-default" href="{!URLFOR($Action.Task.NewTask, null, [who_id=PrimaryContact.Id, what_id=Opportunity.Id, tsk5='Make a thank you call'], true)}">Call - {!PrimaryContact.HomePhone}</a>
+              <a type="button" class="btn btn-default" href="{!URLFOR($Action.Task.NewTask, null, [who_id=PrimaryContact.Id, what_id=Opportunity.Id, tsk5='Make a thank you call'], true)}">Call - {!PrimaryContactPhone}</a>
             </div>
                 </div>
             </div>
