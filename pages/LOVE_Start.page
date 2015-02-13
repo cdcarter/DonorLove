@@ -41,7 +41,7 @@
     }  
 </style>
 
-
+<apex:form>
 <div class="bootstrap" >
 
     <div class="container">
@@ -68,7 +68,7 @@
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - {!PrimaryContactEmail} <span class="label label-success">Best</span> <span class="caret"></span></button>
               <ul class="dropdown-menu" role="menu" style="width: 100%">
                 <apex:repeat value="{!EmailTemplates}" var="template">
-                  <li><a href="/apex/LOVE_email?id={!Opportunity.Id}&email={!template.Id}">{!template.Name}</a></li>
+                  <li><apex:commandLink action="{!ToEmail}" value="{!template.name}"/></li>
                 </apex:repeat>
               </ul>
             </div>
@@ -107,4 +107,5 @@
         </div>
     </div>
 </div>
+</apex:form>
 </apex:page>

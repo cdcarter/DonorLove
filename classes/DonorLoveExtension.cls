@@ -1,7 +1,9 @@
 public class DonorLoveExtension {
 	Opportunity opp;
+   private ApexPages.StandardController sc;
 
 	public DonorLoveExtension(ApexPages.standardController std){
+      sc = std;
 		opp = (Opportunity)std.getRecord();
 	}
 
@@ -33,5 +35,15 @@ public class DonorLoveExtension {
    public String getMergedEmail() {
       Messaging.SingleEmailMessage mail = UTIL_Email_Templates.MergeTemplateWithoutSending(opp.Id, ApexPages.currentPage().getParameters().get('email'), 'Test Sender');
       return mail.getHTMLBody();
+   }
+
+
+   // Page Navigation
+   public PageReference ToStart() {
+      return Page.LOVE_Start;
+   }
+
+   public PageReference ToEmail() {
+      return Page.LOVE_Email;
    }
 }
