@@ -1,0 +1,11 @@
+<apex:page showHeader="true" standardController="Opportunity" extensions="DonorLoveExtension">
+	<style type="text/css">
+    	.pbTitle {
+        	white-space: nowrap
+    	}
+	</style>
+
+	<apex:pageBlock title="Acknowledging {!Opportunity.Name}">
+		<apex:outputText escape="false" value="{!MergedEmail}"/>
+	</apex:pageBlock>	
+</apex:page>
