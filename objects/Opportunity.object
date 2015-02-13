@@ -15,7 +15,7 @@
         <fullName>Love</fullName>
         <availability>online</availability>
         <description>Start the donation acknowledgement process.</description>
-        <displayType>link</displayType>
+        <displayType>button</displayType>
         <height>600</height>
         <linkType>page</linkType>
         <masterLabel>Love</masterLabel>

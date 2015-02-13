@@ -35,7 +35,7 @@ public with sharing class UTIL_Email_Templates {
 		Messaging.reserveSingleEmailCapacity(1);
 		Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
 		mail.setUseSignature(false);
-		mail.setSaveAsActivity(true); // we will log an activity here TODO: refactor this out
+		mail.setSaveAsActivity(false); // the activity will be logged manually so to hit the appropriate recordtype
 		mail.setSenderDisplayName(senderDisplayName);
 		mail.setTargetObjectId(targetObjectId);
 		mail.setWhatId(whatId);

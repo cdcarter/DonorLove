@@ -49,7 +49,26 @@ public class DonorLoveExtension {
    }
 
    public PageReference SendEmail() {
+      // send the message
       Messaging.SingleEmailMessage mail = UTIL_Email_Templates.SendPlainTextMessage(getPrimaryContact().Id, opp.Id, mergedEmailSubject, mergedEmailBody, UserInfo.getName());
+
+      // create a completed task
+      Task task = new Task();
+      task.OwnerId = UserInfo.getUserId();
+      task.WhatId = opp.id;
+      task.WhoId = getPrimaryContact().Id;
+      task.Status = 'Completed';
+      task.Description = mergedEmailBody;
+      task.Subject = mergedEmailSubject;
+      task.RecordTypeId = npsp.UTIL_RecordTypes_API.GetRecordTypeId('Task','Acknowledgement');
+
+      insert task;
+
+      // mark the opportunity as acknowledged MAYBE MAKE A WORKFLOW
+      opp.Acknowledged__c = true;
+      update opp;
+
+      // return to the opportunity view
       return sc.view();
    }
 }
