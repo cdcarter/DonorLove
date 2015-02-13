@@ -4,19 +4,7 @@
 		<members>Campaign.Acknowledgement_Email_Template__c</members>
 		<members>Campaign.Acknowledgement_Template_Id__c</members>
 		<members>Opportunity.Acknowledged__c</members>
-		<members>Opportunity.Acknowledgement_Date__c</members>
-		<members>Opportunity.Acknowledgement_Method__c</members>
-		<members>Opportunity.Acknowledgement_Notes__c</members>
-		<members>Opportunity.Acknowledgement_Received__c</members>
 		<name>CustomField</name>
-	</types>
-	<types>
-		<members>Opportunity.Primary_Acknowledgement</members>
-		<name>FieldSet</name>
-	</types>
-	<types>
-		<members>Opportunity-Acknowledgeable Donation Layout</members>
-		<name>Layout</name>
 	</types>
 	<types>
 		<members>DonorLoveExtension</members>
