@@ -7,7 +7,7 @@
 
 	<apex:pageBlock title="Acknowledging {!Opportunity.Name}">
 	<apex:form>
-		<apex:outputText escape="false" value="{!MergedEmail}"></apex:outputText>
+		<apex:outputText escape="false" value="{!mergedEmail}"></apex:outputText>
 	</apex:form>
 	</apex:pageBlock>	
 </apex:page>
