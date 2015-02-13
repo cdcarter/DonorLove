@@ -4,6 +4,7 @@
 		<members>Campaign.Acknowledgement_Email_Template__c</members>
 		<members>Campaign.Acknowledgement_Template_Id__c</members>
 		<members>Opportunity.Acknowledged__c</members>
+		<members>Task.Type</members>
 		<name>CustomField</name>
 	</types>
 	<types>
@@ -31,6 +32,7 @@
 		<name>WebLink</name>
 	</types>
 	<types>
+		<members>Task.LOVE_Acknowledgement</members>
 		<members>Task.SFDCTask</members>
 		<name>RecordType</name>
 	</types>
