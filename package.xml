@@ -21,6 +21,7 @@
 	<types>
 		<members>DonorLoveExtension</members>
 		<members>UTIL_Contact_Preferences</members>
+		<members>UTIL_Email_Templates</members>
 		<name>ApexClass</name>
 	</types>
 	<types>

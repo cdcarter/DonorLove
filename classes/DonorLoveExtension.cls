@@ -29,4 +29,9 @@ public class DonorLoveExtension {
    		Id folder = [Select Id From Folder Where DeveloperName = 'Donation_Thank_Yous'].Id;
    		return [Select Name,DeveloperName,Id from EmailTemplate Where FolderId = :folder];
    }
+
+   public String getMergedEmail() {
+      Messaging.SingleEmailMessage mail = UTIL_Email_Templates.MergeTemplateWithoutSending(opp.Id, ApexPages.currentPage().getParameters().get('email'), 'Test Sender');
+      return mail.getHTMLBody();
+   }
 }
