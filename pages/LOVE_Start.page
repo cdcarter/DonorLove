@@ -68,7 +68,9 @@
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - {!PrimaryContactEmail} <span class="label label-success">Best</span> <span class="caret"></span></button>
               <ul class="dropdown-menu" role="menu" style="width: 100%">
                 <apex:repeat value="{!EmailTemplates}" var="template">
-                  <li><apex:commandLink action="{!ToEmail}" value="{!template.name}"/></li>
+                  <li><apex:commandLink action="{!ToEmail}" value="{!template.name}">
+                    <apex:param name="emailId" value="{!template.id}" assignTo="{!emailId}"></apex:param>
+                  </apex:commandLink></li>
                 </apex:repeat>
               </ul>
             </div>

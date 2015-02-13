@@ -1,6 +1,8 @@
 public class DonorLoveExtension {
 	Opportunity opp;
    private ApexPages.StandardController sc;
+   public Messaging.SingleEmailMessage mergedEmail {get; set;}
+   public String emailId {get; set;}
 
 	public DonorLoveExtension(ApexPages.standardController std){
       sc = std;
@@ -12,7 +14,7 @@ public class DonorLoveExtension {
 												From OpportunityContactRole
 												Where IsPrimary = true
 												and OpportunityId =: opp.id];
-		return [Select Name, npe01__WorkEmail__c, npe01__HomeEmail__c, npe01__AlternateEmail__c, npe01__Preferred_Email__c, npe01__PreferredPhone__c, npe01__WorkPhone__c, MobilePhone, OtherPhone, HomePhone, MailingCity, MailingState
+		return [Select Id, Name, npe01__WorkEmail__c, npe01__HomeEmail__c, npe01__AlternateEmail__c, npe01__Preferred_Email__c, npe01__PreferredPhone__c, npe01__WorkPhone__c, MobilePhone, OtherPhone, HomePhone, MailingCity, MailingState
 				From Contact
 				Where Id =: primary[0].ContactId];
    }
@@ -33,8 +35,7 @@ public class DonorLoveExtension {
    }
 
    public String getMergedEmail() {
-      Messaging.SingleEmailMessage mail = UTIL_Email_Templates.MergeTemplateWithoutSending(opp.Id, ApexPages.currentPage().getParameters().get('email'), 'Test Sender');
-      return mail.getHTMLBody();
+      return mergedEmail.getHTMLBody();
    }
 
 
@@ -44,6 +45,7 @@ public class DonorLoveExtension {
    }
 
    public PageReference ToEmail() {
+      mergedEmail = UTIL_Email_Templates.MergeTemplateWithoutSending(getPrimaryContact().Id, opp.Id, (Id)emailId, 'Test Sender');
       return Page.LOVE_Email;
    }
 }
