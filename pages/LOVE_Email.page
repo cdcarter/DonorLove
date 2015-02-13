@@ -4,12 +4,12 @@
         	white-space: nowrap
     	}
 	</style>
-	<apex:form>
+	<apex:form >
 
 	<apex:pageBlock title="Acknowledging {!Opportunity.Name}">
-		<apex:pageBlockSection><apex:inputText size="120" value="{!mergedEmailSubject}"></apex:inputText><br/>
+		<apex:pageBlockSection ><apex:inputText size="120" value="{!mergedEmailSubject}"></apex:inputText><br/>
 		<apex:inputTextarea cols="120" rows="20" value="{!mergedEmailBody}"></apex:inputTextarea></apex:pageBlockSection>
-		<apex:pageBlockButtons><apex:commandButton value="Send" action="{!SendEmail}"></apex:commandButton></apex:pageBlockButtons>
+		<apex:pageBlockButtons ><apex:commandButton value="Send" action="{!SendEmail}"></apex:commandButton></apex:pageBlockButtons>
 	</apex:pageBlock>	
 
 	</apex:form>
