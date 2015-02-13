@@ -30,4 +30,19 @@ public with sharing class UTIL_Email_Templates {
 		// String mailSubject = mail.getSubject();
 		return mail;
 	}
+
+	public static Messaging.SingleEmailMessage SendPlainTextMessage(Id targetObjectId, Id whatId, String subject, String body, String senderDisplayName) {
+		Messaging.reserveSingleEmailCapacity(1);
+		Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
+		mail.setUseSignature(false);
+		mail.setSaveAsActivity(true); // we will log an activity here TODO: refactor this out
+		mail.setSenderDisplayName(senderDisplayName);
+		mail.setTargetObjectId(targetObjectId);
+		mail.setWhatId(whatId);
+		mail.setPlainTextBody(body);
+		mail.setSubject(subject);
+
+		Messaging.sendEmail(new Messaging.SingleEmailMessage[] {mail});
+		return mail;
+	}
 }

@@ -1,7 +1,8 @@
 public class DonorLoveExtension {
 	Opportunity opp;
    private ApexPages.StandardController sc;
-   public String mergedEmail {get; set;}
+   public String mergedEmailBody {get; set;}
+   public String mergedEmailSubject {get; set;}
    public String emailId {get; set;}
 
 	public DonorLoveExtension(ApexPages.standardController std){
@@ -39,8 +40,16 @@ public class DonorLoveExtension {
       return Page.LOVE_Start;
    }
 
+   // the test email I was using didn't have a html template, so I switched here to plain text body. Probably need to handle that properly...
    public PageReference ToEmail() {
-      this.mergedEmail = UTIL_Email_Templates.MergeTemplateWithoutSending(getPrimaryContact().Id, opp.Id, (Id)emailId, 'Test Sender').getPlainTextBody();
+      Messaging.SingleEmailMessage mail = UTIL_Email_Templates.MergeTemplateWithoutSending(getPrimaryContact().Id, opp.Id, (Id)emailId, 'Test Sender');
+      this.mergedEmailBody = mail.getPlainTextBody();
+      this.mergedEmailSubject = mail.getSubject();
       return Page.LOVE_Email;
+   }
+
+   public PageReference SendEmail() {
+      Messaging.SingleEmailMessage mail = UTIL_Email_Templates.SendPlainTextMessage(getPrimaryContact().Id, opp.Id, mergedEmailSubject, mergedEmailBody, UserInfo.getName());
+      return sc.view();
    }
 }
