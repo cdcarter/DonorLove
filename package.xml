@@ -31,7 +31,7 @@
 		<name>WebLink</name>
 	</types>
 	<types>
-		<members>SFDCTask</members>
+		<members>Task.SFDCTask</members>
 		<name>RecordType</name>
 	</types>
 	<version>31.0</version>
