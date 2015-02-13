@@ -3,7 +3,7 @@ public with sharing class UTIL_Email_Templates {
 
 	// Derived from: 
 	// http://salesforce.stackexchange.com/questions/13/using-apex-to-assemble-html-letterhead-emails/8745#8745 and http://salesforce.stackexchange.com/questions/48306/how-to-avoid-to-send-the-mail-to-owner-field?lq=1
-	public static Messaging.SingleEmailMessage MergeTemplateWithoutSending(Id targetObjectId, Id templateId, String senderDisplayName) {
+	public static Messaging.SingleEmailMessage MergeTemplateWithoutSending(Id targetObjectId, Id whatId, Id templateId, String senderDisplayName) {
 		Messaging.reserveSingleEmailCapacity(1);
 		Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
 		// Intentionally set a bogus email address.
@@ -13,6 +13,7 @@ public with sharing class UTIL_Email_Templates {
 		mail.setSaveAsActivity(false);
 		mail.setSenderDisplayName(senderDisplayName);
 		mail.setTargetObjectId(targetObjectId);
+		mail.setWhatId(whatId);
 		mail.setTemplateId(templateId);
 
 		// create a save point
