@@ -95,7 +95,7 @@ public class DonorLoveExtension {
          task.Subject = 'Acknowledgement Call';
       }
 
-      return sc.view(); // just for compiling. 
+      return Page.LOVE_ClosedTask;
    }
 
    // the save button will insert the pending task and then return us to the Opp standard view
