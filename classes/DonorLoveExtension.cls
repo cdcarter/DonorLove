@@ -4,6 +4,7 @@ public class DonorLoveExtension {
    public String mergedEmailBody {get; set;}
    public String mergedEmailSubject {get; set;}
    public String emailId {get; set;}
+   public Task task {get; set;}
 
 	public DonorLoveExtension(ApexPages.standardController std){
       sc = std;
@@ -35,10 +36,15 @@ public class DonorLoveExtension {
    		return [Select Name,DeveloperName,Id from EmailTemplate Where FolderId = :folder];
    }
 
-   // Page Navigation
+   //
+   // PAGE NAVIGATION
+   //
+
    public PageReference ToStart() {
       return Page.LOVE_Start;
    }
+
+   // Page Navigation for the Email Process
 
    // the test email I was using didn't have a html template, so I switched here to plain text body. Probably need to handle that properly...
    public PageReference ToEmail() {
@@ -70,5 +76,31 @@ public class DonorLoveExtension {
 
       // return to the opportunity view
       return sc.view();
+   }
+
+   // Page Navigation for the Task Process
+
+   public PageReference ToClosedTask() {
+      String type = ApexPages.currentPage().getParameters().get('type');
+
+      Task task = new Task();
+      task.OwnerId = UserInfo.getUserId();
+      task.WhatId = opp.id;
+      task.WhoId = getPrimaryContact().Id;
+      task.Status = 'Completed';
+      task.RecordTypeId = npsp.UTIL_RecordTypes_API.GetRecordTypeId('Task','Acknowledgement');
+      if (type == 'Letter') {
+         task.Subject = 'Acknowledgement Letter';
+      } else if (type == 'Call') {
+         task.Subject = 'Acknowledgement Call';
+      }
+
+      return sc.view(); // just for compiling. 
+   }
+
+   // the save button will insert the pending task and then return us to the Opp standard view
+   public PageReference ToSaveTask() {
+      insert task; 
+      return sc.view(); 
    }
 }
