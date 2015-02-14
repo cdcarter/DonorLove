@@ -25,6 +25,7 @@
 		<name>ApexPage</name>
 	</types>
 	<types>
+		<members>AcknowledgeOpportunityTrigger</members>
 		<members>UpdateEmailTemplate</members>
 		<name>ApexTrigger</name>
 	</types>
