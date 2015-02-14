@@ -7,8 +7,10 @@
 	<apex:form >
 
 	<apex:pageBlock title="Acknowledging {!Opportunity.Name}">
-		<apex:pageBlockSection title="{!task.Subject}" columns="1">
-			<apex:inputField value="{!task.Description}" html-rows="10" html-cols="60"></apex:inputField>
+		<apex:pageBlockSection title="{!Task.Subject}" columns="1">
+			<apex:inputField value="{!Task.Description}" html-rows="10" html-cols="60"></apex:inputField>
+			<apex:inputField value="{!Task.Status}"></apex:inputField>
+			<apex:inputField value="{!Task.OwnerId}"></apex:inputField>
 		</apex:pageBlockSection>
 		<apex:pageBlockButtons ><apex:commandButton value="Save" action="{!SaveTask}"></apex:commandButton></apex:pageBlockButtons>
 	</apex:pageBlock>

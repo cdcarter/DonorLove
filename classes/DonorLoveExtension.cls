@@ -102,8 +102,11 @@ public class DonorLoveExtension {
    // the save button will insert the pending task and then return us to the Opp standard view
    public PageReference SaveTask() {
       insert task; 
-      opp.Acknowledged__c = true;
-      update opp;
+      if (task.Status == 'Completed') {
+         opp.Acknowledged__c = true;
+         update opp;
+      }
+
       return sc.view(); 
    }
 }
