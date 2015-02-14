@@ -75,10 +75,14 @@
               </ul>
             </div>
             <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-              <a type="button" class="btn btn-default" href="/mail/mmchoose.jsp?id={!Opportunity.Id}&retUrl={!Opportunity.Id}">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState}</a>
+              <apex:commandLink styleClass="btn btn-default" action="{!ToClosedTask}" value="Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState}" >
+                <apex:param name="taskType" value="Letter" assignTo="{!taskType}"></apex:param>
+              </apex:commandLink>
             </div>
             <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-              <a type="button" class="btn btn-default" href="{!URLFOR($Action.Activity.LogCall, null, [who_id=PrimaryContact.Id, what_id=Opportunity.Id, tsk5='Thank you call'], true)}">Call - {!PrimaryContactPhone}</a>
+              <apex:commandLink styleClass="btn btn-default" action="{!ToClosedTask}" value="Call - {!PrimaryContactPhone}" >
+                <apex:param name="taskType" value="Call" assignTo="{!taskType}"></apex:param>
+              </apex:commandLink>
             </div>
                 </div>                
             </div>

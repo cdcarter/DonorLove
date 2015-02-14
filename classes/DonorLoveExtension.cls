@@ -5,6 +5,7 @@ public class DonorLoveExtension {
    public String mergedEmailSubject {get; set;}
    public String emailId {get; set;}
    public Task task {get; set;}
+   public String taskType {get; set;}
 
 	public DonorLoveExtension(ApexPages.standardController std){
       sc = std;
@@ -81,26 +82,28 @@ public class DonorLoveExtension {
    // Page Navigation for the Task Process
 
    public PageReference ToClosedTask() {
-      String type = ApexPages.currentPage().getParameters().get('type');
-
-      Task task = new Task();
+      task = new Task();
       task.OwnerId = UserInfo.getUserId();
       task.WhatId = opp.id;
       task.WhoId = getPrimaryContact().Id;
       task.Status = 'Completed';
       task.RecordTypeId = npsp.UTIL_RecordTypes_API.GetRecordTypeId('Task','Acknowledgement');
-      if (type == 'Letter') {
+      if (taskType == 'Letter') {
          task.Subject = 'Acknowledgement Letter';
-      } else if (type == 'Call') {
+         task.Description = 'What letter did you send?';
+      } else if (taskType == 'Call') {
          task.Subject = 'Acknowledgement Call';
+         task.Description = 'What did you say in the call?';
       }
 
       return Page.LOVE_ClosedTask;
    }
 
    // the save button will insert the pending task and then return us to the Opp standard view
-   public PageReference ToSaveTask() {
+   public PageReference SaveTask() {
       insert task; 
+      opp.Acknowledged__c = true;
+      update opp;
       return sc.view(); 
    }
 }

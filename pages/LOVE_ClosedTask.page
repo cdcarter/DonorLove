@@ -1,3 +1,16 @@
 <apex:page showHeader="true" sidebar="true" standardController="Opportunity" extensions="DonorLoveExtension">
-	
+		<style type="text/css">
+    	.pbTitle {
+        	white-space: nowrap
+    	}
+	</style>
+	<apex:form >
+
+	<apex:pageBlock title="Acknowledging {!Opportunity.Name}">
+		<apex:pageBlockSection title="{!task.Subject}" columns="1">
+			<apex:inputField value="{!task.Description}" html-rows="10" html-cols="60"></apex:inputField>
+		</apex:pageBlockSection>
+		<apex:pageBlockButtons ><apex:commandButton value="Save" action="{!SaveTask}"></apex:commandButton></apex:pageBlockButtons>
+	</apex:pageBlock>
+	</apex:form>
 </apex:page>
