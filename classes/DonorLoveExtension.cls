@@ -71,11 +71,7 @@ public class DonorLoveExtension {
       task.RecordTypeId = npsp.UTIL_RecordTypes_API.GetRecordTypeId('Task','Acknowledgement');
 
       insert task;
-
-      // mark the opportunity as acknowledged MAYBE MAKE A WORKFLOW
-      opp.Acknowledged__c = true;
-      update opp;
-
+      
       // return to the opportunity view
       return sc.view();
    }
@@ -124,11 +120,6 @@ public class DonorLoveExtension {
    // the save button will insert the pending task and then return us to the Opp standard view
    public PageReference SaveTask() {
       insert task; 
-      if (task.Status == 'Completed') {
-         opp.Acknowledged__c = true;
-         update opp;
-      }
-
       return sc.view(); 
    }
 }
