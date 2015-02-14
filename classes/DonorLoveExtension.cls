@@ -71,7 +71,7 @@ public class DonorLoveExtension {
       task.RecordTypeId = npsp.UTIL_RecordTypes_API.GetRecordTypeId('Task','Acknowledgement');
 
       insert task;
-      
+
       // return to the opportunity view
       return sc.view();
    }
@@ -98,7 +98,13 @@ public class DonorLoveExtension {
 
    public PageReference ToOpenTask() {
       task = new Task();
-      task.OwnerId = [Select Id From User Where Name =: taskUserId].Id;
+
+      List<User> listU = [Select Id From User Where Name =: taskUserId Limit 1];
+
+      if (listU != null && listU.size() == 1) {
+         task.OwnerId = listU[0].Id;
+      }
+
       task.WhatId = opp.id;
       task.WhoId = getPrimaryContact().Id;
       task.Status = 'Not Started';
