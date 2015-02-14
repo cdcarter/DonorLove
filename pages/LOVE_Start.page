@@ -92,7 +92,7 @@
                     <div class="panel-heading"><h3 class="panel-title">Assign to Someone Else</h3></div>
                     <div class="input-group">
               <span class="input-group-addon" id="basic-addon1">@</span>
-              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" />
+              <apex:inputText styleClass="form-control" html-placeholder="Username" value="{!taskUserId}"></apex:inputText>
           </div>
           <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" >Email - {!PrimaryContactEmail} <span class="caret"></span></button>
@@ -103,10 +103,15 @@
               </ul>
             </div>
             <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-              <a type="button" class="btn btn-default" href="{!URLFOR($Action.Task.NewTask, null, [who_id=PrimaryContact.Id, what_id=Opportunity.Id, tsk5='Send a thank you letter'], true)}">Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState}</a>
+              <apex:commandLink styleClass="btn btn-default" action="{!ToOpenTask}" value="Letter - {!PrimaryContact.MailingCity}, {!PrimaryContact.MailingState}" >
+                <apex:param name="taskType" value="Letter" assignTo="{!taskType}"></apex:param>
+              </apex:commandLink>
+
             </div>
             <div class="btn-group-vertical btn-group-lg" role="group" style="width: 100%">
-              <a type="button" class="btn btn-default" href="{!URLFOR($Action.Task.NewTask, null, [who_id=PrimaryContact.Id, what_id=Opportunity.Id, tsk5='Make a thank you call'], true)}">Call - {!PrimaryContactPhone}</a>
+              <apex:commandLink styleClass="btn btn-default" action="{!ToOpenTask}" value="Call - {!PrimaryContactPhone}" >
+                <apex:param name="taskType" value="Call" assignTo="{!taskType}"></apex:param>
+              </apex:commandLink>
             </div>
                 </div>
             </div>

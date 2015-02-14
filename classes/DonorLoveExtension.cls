@@ -6,6 +6,7 @@ public class DonorLoveExtension {
    public String emailId {get; set;}
    public Task task {get; set;}
    public String taskType {get; set;}
+   public String taskUserId {get; set;} //actuallyaname...
 
 	public DonorLoveExtension(ApexPages.standardController std){
       sc = std;
@@ -94,6 +95,24 @@ public class DonorLoveExtension {
       } else if (taskType == 'Call') {
          task.Subject = 'Acknowledgement Call';
          task.Description = 'What did you say in the call?';
+      }
+
+      return Page.LOVE_ClosedTask;
+   }
+
+   public PageReference ToOpenTask() {
+      task = new Task();
+      task.OwnerId = [Select Id From User Where Name =: taskUserId].Id;
+      task.WhatId = opp.id;
+      task.WhoId = getPrimaryContact().Id;
+      task.Status = 'Not Started';
+      task.RecordTypeId = npsp.UTIL_RecordTypes_API.GetRecordTypeId('Task','Acknowledgement');
+      if (taskType == 'Letter') {
+         task.Subject = 'Acknowledgement Letter';
+         task.Description = 'Please send an acknowledgement letter.';
+      } else if (taskType == 'Call') {
+         task.Subject = 'Acknowledgement Call';
+         task.Description = 'Please call this donor to acknowledge them.';
       }
 
       return Page.LOVE_ClosedTask;
