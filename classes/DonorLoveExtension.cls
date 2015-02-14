@@ -113,6 +113,9 @@ public class DonorLoveExtension {
       } else if (taskType == 'Call') {
          task.Subject = 'Acknowledgement Call';
          task.Description = 'Please call this donor to acknowledge them.';
+      } else if (taskType == 'Email') {
+         task.Subject = 'Acknowledgement Email';
+         task.Description = 'Please email this donor to acknowledge them.';
       }
 
       return Page.LOVE_ClosedTask;
